@@ -23,14 +23,18 @@ function toBlack(e) {
 function rainbow(e) {
     let randomColor = Math.floor(Math.random()*16777215).toString(16);
     this.setAttribute(`style`, `background: #${randomColor}`);
+    console.log(randomColor);
 }
 function staticColor(e) {
     document.getElementById('colorPicker').value;
-    this.setAttribute(`style`, `background: ${colorPicker.value}`)
-    console.log(colorId);
+    this.setAttribute(`style`, `background: ${colorPicker.value}`);
 } 
 function reset(e) {
     fields.forEach(field => field.setAttribute('style', ''));
+    fields.forEach(field => field.classList.remove('toBlack'));
+}
+function grid(e) {
+    fields.forEach(field=>field.classList.toggle('innerBorder'));
 }
 create();
 
@@ -38,13 +42,23 @@ create();
 const fields = document.querySelectorAll('.field');
 const colorPicker = document.querySelector('#colorPicker');
 const btnReset = document.querySelector('#btnReset');
+const btnColor = document.querySelector('#btnColor');
+const btnGrid = document.querySelector('#btnGrid');
 
-btnReset.addEventListener('click', reset)
+btnGrid.addEventListener('click', grid);
+
+btnReset.addEventListener('click', reset);
+btnColor.addEventListener('click', ()=> {
+    fields.forEach(field => field.addEventListener('mouseover', rainbow));
+});
+colorPicker.addEventListener('input', ()=> {
+    fields.forEach(field => field.addEventListener('mouseover', staticColor));
+});
 
 
 
 
 
-fields.forEach(field => field.addEventListener('mouseover', rainbow));
+fields.forEach(field => field.addEventListener('mouseover', toBlack));
 
 

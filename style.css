@@ -35,6 +35,7 @@ body {
     background-color: rgb(255, 255, 255);
     padding: 0px;
     margin: 0px;
+    box-sizing: border-box;
 }
 .toBlack {
     background-color: black;
@@ -67,4 +68,7 @@ input {
 input::-webkit-color-swatch {
     border-radius: 50%;
     border: solid 7px black;
+}
+.innerBorder {
+    border: lightgray solid 1px;
 }
