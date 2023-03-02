@@ -1,7 +1,7 @@
 const container = document.querySelector('.container');
 let size = prompt('Iedo cipar');
 let sheet = document.createElement('style');
-let colorId = '';
+let colorValue = '#000000';
 
 
 
@@ -17,27 +17,24 @@ function create() {
 }
 };
 /*Coloring functions*/
-function toBlack(e) {
-    this.classList.add('toBlack');
-}
-function rainbow(e) {
-    let randomColor = Math.floor(Math.random()*16777215).toString(16);
-    this.setAttribute(`style`, `background: #${randomColor}`);
-    console.log(randomColor);
-}
-function staticColor(e) {
-    document.getElementById('colorPicker').value;
-    this.setAttribute(`style`, `background: ${colorPicker.value}`);
-} 
 function reset(e) {
     fields.forEach(field => field.setAttribute('style', ''));
-    fields.forEach(field => field.classList.remove('toBlack'));
 }
 function grid(e) {
     fields.forEach(field=>field.classList.toggle('innerBorder'));
 }
-create();
+function randomColor(e) {
+    colorValue = "#" + (Math.floor(Math.random()*16777215).toString(16));
+    return colorValue;
+}
+function darker(e) {
+    
+}
+function color(e) {
+    this.setAttribute('style', `background: ${colorValue}`)
+};
 
+create();
 
 const fields = document.querySelectorAll('.field');
 const colorPicker = document.querySelector('#colorPicker');
@@ -46,21 +43,20 @@ const btnColor = document.querySelector('#btnColor');
 const btnGrid = document.querySelector('#btnGrid');
 
 btnGrid.addEventListener('click', grid);
-
 btnReset.addEventListener('click', reset);
 
-colorPicker.addEventListener('click', ()=> {
-    fields.forEach(field => field.addEventListener('mouseover', staticColor));
-    
+
+fields.forEach(field => field.addEventListener('mouseover', color));
+
+
+colorPicker.addEventListener('input', (e) => {
+     window.removeEventListener("mouseover", randomColor);
+     colorValue = colorPicker.value;
+     return colorValue;
+}); 
+btnColor.addEventListener('click', (e) => {
+    window.addEventListener('mouseover', randomColor)
+    return "#" + colorValue
 });
-
-btnColor.addEventListener('click', ()=> {
-    fields.forEach(field => field.addEventListener('mouseover', rainbow));
-});
-
-fields.forEach(field => field.addEventListener('mouseover', toBlack));
-
-
-
 
 
