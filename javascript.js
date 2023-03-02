@@ -48,17 +48,19 @@ const btnGrid = document.querySelector('#btnGrid');
 btnGrid.addEventListener('click', grid);
 
 btnReset.addEventListener('click', reset);
+
+colorPicker.addEventListener('click', ()=> {
+    fields.forEach(field => field.addEventListener('mouseover', staticColor));
+    
+});
+
 btnColor.addEventListener('click', ()=> {
     fields.forEach(field => field.addEventListener('mouseover', rainbow));
 });
-colorPicker.addEventListener('input', ()=> {
-    fields.forEach(field => field.addEventListener('mouseover', staticColor));
-});
-
-
-
-
 
 fields.forEach(field => field.addEventListener('mouseover', toBlack));
+
+
+
 
 
