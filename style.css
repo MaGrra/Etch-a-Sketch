@@ -49,30 +49,41 @@ body {
     justify-content: center;
     gap: 15px;
     background-color: rgb(63, 63, 63);
-    max-width: inherit;
     margin-bottom: 40px;
+    padding: 20px;
+    border-radius: 20px;
+    
 }
 button {
-    background-color: rgb(66, 66, 66);
+    background-color: rgb(75, 75, 75);
     color: white;
     font-size: 25px;
     border: 1px solid white;
     box-shadow: 10px yellow;
     border-radius: 10px;
     padding: 5px 10px 5px 10px;
+    transition: 0.5s;
 }
-input {
+
+#colorPicker {
     min-height: 75px;
     min-width: 75px;
     appearance: none;
     background-color: transparent;
-    border: transparent;
     border-radius: 50%;
 }
-input::-webkit-color-swatch {
+#colorPicker::-webkit-color-swatch {
     border-radius: 50%;
-    border: solid 7px rgb(75, 75, 75);
+    border: solid 2px rgba(255, 255, 255, 0.795);
 }
 .innerBorder {
     border: lightgray solid 1px;
+}
+.btnOn {
+    background-color: rgb(202, 15, 15);
+    box-shadow: 3px red;
+    border: red 3px solid;
+}
+button:hover {
+    background-color: rgb(145, 145, 145);
 }
