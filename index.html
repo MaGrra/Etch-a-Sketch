@@ -8,19 +8,28 @@
     <link rel="stylesheet" href="./style.css">
     <script src="./javascript.js" defer></script>
 </head>
-<body>
+<body class="beach">
+    <a style="text-align: center; font-size: 24px; margin: 10px;" href="https://github.com/MaGrra">MaGrra<img class="logo"  src="./media/github.png" alt="Github" height="20px"></a>
     <div class="box">
-        <div>Etch-a-Sketch</div> 
         <div class="screen">
+            <div class="title">Etch-a-Sketch</div>
             <div class="container"></div>
         </div>
         <div class="stand">
             <div class="controls" >
-                <button id="btnReset">Reset</button>
-                <button id="btnColor">Rainbow</button>
-                <button id="btnGrid">Show Grid</button>
-                <input class="slider" type="range" min="1" max="64" value="20">
-                <input type="color" id="colorPicker" value="#000000">
+                <div class="left">
+                    <div class="button" id="btnReset">Reset</div>
+                    <div class="button" id="btnGrid">Show Grid</div>
+                </div>
+                <div class="mid">
+                    <div class="button beachBtn">Travel</div>
+                    <input class="slider" type="range" min="1" max="64" value="20" oninput="this.nextElementSibling.value = this.value" >
+                    <output class="sliderNum">24</output>
+                </div>
+                <div class="right">
+                    <div class="button" id="btnColor">Random</div>
+                    <input type="color" id="colorPicker" value="#8f00ac">
+                </div>
             </div>
         </div>
     </div>

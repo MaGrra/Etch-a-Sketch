@@ -2,7 +2,8 @@ const container = document.querySelector('.container');
 const slider = document.querySelector('.slider');
 let size = slider.value;
 let sheet = document.createElement('style');
-let colorValue = '#000000';
+let colorValue = '#8f00ac';
+filter = 100;
 
 
 
@@ -35,11 +36,9 @@ function randomColor(e) {
     colorValue = "#" + (Math.floor(Math.random()*16777215).toString(16));
     return colorValue;
 }
-function darker(e) {
 
-}
 function color(e) {
-    this.setAttribute('style', `background: ${colorValue}`)
+    this.setAttribute('style', `background: ${colorValue}`);
 };
 function setSize(e) {
     size = slider.value;
@@ -50,6 +49,16 @@ function setSize(e) {
 create();
 const btnColor = document.querySelector('#btnColor');
 const colorPicker = document.querySelector('#colorPicker');
+const screen = document.querySelector('.screen');
+const btnDarker =document.querySelector('#btnDark');
+const beachBtn = document.querySelector('.beachBtn');
+const body = document.querySelector('body');
+
+body.classList.toggle('beach');
+beachBtn.addEventListener('click', (e) => {
+    body.classList.toggle('beach');
+})
+
 
 
 
@@ -58,7 +67,6 @@ slider.addEventListener('input', (e) => {
     size = slider.value;
     container.innerHTML = '';
     create();
-    console.log(size);
 })
 colorPicker.addEventListener('input', (e) => {
      window.removeEventListener("mouseover", randomColor);
@@ -73,5 +81,3 @@ btnColor.addEventListener('click', (e) => {
     colorPicker.setAttribute('style', 'transition: 0.5s;');
     return "#" + colorValue
 });
-
-console.log(slider.value);

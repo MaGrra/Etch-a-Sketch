@@ -1,20 +1,37 @@
 * {
     margin: 0px;
 }
+@font-face {
+    font-family: PressStart;
+    src: url(./media/PressStart2P-Regular.ttf);
+}
 body {
+    font-family: PressStart;
     display: flex;
     flex-direction: column;
     color: rgb(20, 20, 20);
-    font-size: 70px;
-    background-color: rgb(20, 220, 255);
+    font-size: 40px;
+    background-color: rgb(116, 60, 111);
+    background-image: url(./media/office.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;
+    align-content: center;
+    transition: 1s;
 
+}
+.title {
+    text-align: center;
+
+    margin-top: 5px;
+    margin-bottom: -2%;
 }
 .box {
     text-align: center;
     display: flex;
     flex-direction: column;
     margin: auto;
-    height: 100vh;
     max-width: 1200px;
     width: 100%;
     min-width: 648px;
@@ -24,7 +41,7 @@ body {
     background-image: url(./media/monitors.png);
     background-size: cover;
     background-position: center;
-    height: 785px;
+    min-height: 785px;
 }
 .stand {
     background-image: url(./media/stand.png);
@@ -39,63 +56,98 @@ body {
     height: 648px;
     flex-wrap: wrap;
     margin: auto;
-    margin-top: 6%;
+    margin-top: 4%;
     flex-shrink: 0;
 
 }
-
-
-
 .field {
     background-color: rgb(39, 39, 39);
     padding: 0px;
     margin: 0px;
     box-sizing: border-box;
 }
-.toBlack {
-    background-color: black;
-}
 .controls {
     display: flex;
     justify-content: center;
-    gap: 15px;
-    background-color: rgb(63, 63, 63);
-    margin-top: 30px;
-    margin-bottom: 40px;
-    padding: 20px;
-    border-radius: 20px;
+    align-content: flex-start;
+    gap: 8%;
+    margin-top: 17vh;
+}
+.left {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    justify-content: center;
+    align-content: center;
+}
+.mid {
+    display: flex;
+    flex-direction: column;
+    gap: 1px;
+    justify-content: center;
+    align-content: center;
+    color: #b000d3;
+}
+.right {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    justify-content: center;
+    align-content: center;
+}
+#colorPicker {
+    min-height: 30px;
+    min-width: 100px;
+    background:none;
+    border-radius: 7%;
+    align-self: center;
     
 }
-button {
-    background-color: rgb(75, 75, 75);
-    color: white;
-    font-size: 25px;
-    border: 1px solid white;
-    box-shadow: 10px yellow;
-    border-radius: 10px;
-    padding: 5px 10px 5px 10px;
-    transition: 0.5s;
-}
-
-#colorPicker {
-    min-height: 75px;
-    min-width: 75px;
-    appearance: none;
-    background-color: transparent;
-    border-radius: 50%;
-}
-#colorPicker::-webkit-color-swatch {
-    border-radius: 50%;
-    border: solid 2px rgba(255, 255, 255, 0.795);
+#colorPicker:hover {
+    
 }
 .innerBorder {
-    border: lightgray solid 1px;
+    border: rgb(168, 168, 168) solid 1px;
 }
 .btnOn {
     background-color: rgb(202, 15, 15);
     box-shadow: 3px red;
     border: red 3px solid;
 }
-button:hover {
-    background-color: rgb(145, 145, 145);
+.button:hover {
+    background-color: rgb(189, 189, 189);
+}
+.sliderNum {
+    background-color: rgb(65, 65, 65);
+    border-radius: 7%;
+    font-size: 60%;
+    margin: auto;
+    padding: 5px 10px 5px 10px;
+}
+.beach {
+    background-image: url(./media/beach.jpg);
+    transition: 1s;
+}
+a {
+    text-decoration: none;
+    color: black;
+    padding-top: 20px;
+}
+.button {
+    font-size: 15px;
+    color: rgb(46, 46, 46);
+    border: solid 2px rgb(46, 46, 46);
+    border-radius: 7%;
+    padding: 3px 7px 3px 7px;
+    cursor: pointer;
+    transition: 0.5s ease-in-out;
+    transform: scale(1.1);
+    transition-duration: 0.5s;
+}
+.button :active {
+    transform: scale(1);
+    transition-duration: 0.5s;
+}
+.slider {
+    margin: 10px;
 }
