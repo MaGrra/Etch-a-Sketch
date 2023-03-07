@@ -23,7 +23,6 @@ body {
 }
 .title {
     text-align: center;
-
     margin-top: 5px;
     margin-bottom: -2%;
 }
@@ -35,6 +34,7 @@ body {
     max-width: 1200px;
     width: 100%;
     min-width: 648px;
+    margin-top: 0px;
 
 }
 .screen {
@@ -65,20 +65,22 @@ body {
     padding: 0px;
     margin: 0px;
     box-sizing: border-box;
+
 }
 .controls {
     display: flex;
     justify-content: center;
     align-content: flex-start;
     gap: 8%;
-    margin-top: 17vh;
+    margin-top: 15.5vh;
 }
 .left {
     display: flex;
     flex-direction: column;
-    gap: 5px;
+    gap: 8px;
     justify-content: center;
     align-content: center;
+    
 }
 .mid {
     display: flex;
@@ -91,7 +93,7 @@ body {
 .right {
     display: flex;
     flex-direction: column;
-    gap: 5px;
+    gap: 8px;
     justify-content: center;
     align-content: center;
 }
@@ -103,19 +105,8 @@ body {
     align-self: center;
     
 }
-#colorPicker:hover {
-    
-}
 .innerBorder {
     border: rgb(168, 168, 168) solid 1px;
-}
-.btnOn {
-    background-color: rgb(202, 15, 15);
-    box-shadow: 3px red;
-    border: red 3px solid;
-}
-.button:hover {
-    background-color: rgb(189, 189, 189);
 }
 .sliderNum {
     background-color: rgb(65, 65, 65);
@@ -131,7 +122,6 @@ body {
 a {
     text-decoration: none;
     color: black;
-    padding-top: 20px;
 }
 .button {
     font-size: 15px;
@@ -143,11 +133,40 @@ a {
     transition: 0.5s ease-in-out;
     transform: scale(1.1);
     transition-duration: 0.5s;
+    box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
 }
-.button :active {
-    transform: scale(1);
-    transition-duration: 0.5s;
+.button:hover {
+    background-color: rgb(189, 189, 189);
+}
+.button:active {
+    transform:translate3d(0px, -0.1px, 0px);
+    box-shadow: none;
+    transition: 0.1s;
+}
+.btnOn {
+    transform:translate3d(0px, -0.1px, 0px);
+    box-shadow: none;
+    transition: 0.1s;
 }
 .slider {
     margin: 10px;
+}
+.logo:hover {
+    transform: scale(1.05);
+    transition: 0.5s;
+    
+}
+.logo {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-content: center;
+    margin: auto;
+    margin-bottom: 1px;
+    margin-top: 1px;
+}
+.me {
+    display: flex;
+    justify-content: space-evenly;
+    align-content: space-between;
 }

@@ -7,9 +7,12 @@
     <title>Etch-a-Sketch</title>
     <link rel="stylesheet" href="./style.css">
     <script src="./javascript.js" defer></script>
+    <link rel="icon" type="image/x-icon" href="./media/favicon.ico">
 </head>
 <body class="beach">
-    <a style="text-align: center; font-size: 24px; margin: 10px;" href="https://github.com/MaGrra">MaGrra<img class="logo"  src="./media/github.png" alt="Github" height="20px"></a>
+    <div class="logo">
+    <a class="me" style="text-align: center; font-size: 24px; margin: 10px;" href="https://github.com/MaGrra"><img src="./media/github.png" alt="Github" height="20px"> MaGrra <img src="./media/github.png" alt="Github" height="20px"></a>
+    </div>
     <div class="box">
         <div class="screen">
             <div class="title">Etch-a-Sketch</div>
@@ -19,7 +22,8 @@
             <div class="controls" >
                 <div class="left">
                     <div class="button" id="btnReset">Reset</div>
-                    <div class="button" id="btnGrid">Show Grid</div>
+                    <div class="button" id="btnGrid">Grid</div>
+                    <div class="button" id="btnMute">Mute</div>
                 </div>
                 <div class="mid">
                     <div class="button beachBtn">Travel</div>
@@ -33,5 +37,8 @@
             </div>
         </div>
     </div>
+    <audio class="click" src="./media/click.wav"></audio>
+    <audio class="draw" src="./media/draw.wav"></audio>
+    <audio class='travel' src="./media/swoosh.wav" ></audio>
 </body>
 </html>
